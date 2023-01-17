@@ -1,0 +1,43 @@
+
+shape(100)
+.scale(1,0.2)
+.rotate(90)
+.color(0.5, 0.3, 0.5)
+.modulate(osc(10,0.1))
+.out(o0)
+
+noise(7,0.8)
+.color(0,0.3,0.7)
+  .diff(
+    src(o0)
+    .add(
+      src(o0)
+      .color(1, 0.7, 0.3)
+      .scrollX(0.03)
+      .scrollY(0.03)
+    )
+    .scale(3)
+    .rotate( ()=> (time) )
+    .repeat( ()=>(Math.sin(time)+3.5)/2, ()=>(Math.sin(time)+3.5)/2)
+    .scrollX( ()=>(time/10) )
+    .scrollY( ()=>(time/10) * (-2))
+)
+.add(
+  shape(3)
+  .color(0.3,0.6,0.4)
+  .modulate(o1)
+  .repeat(2.4,5.2)
+  .scale( () => (Math.sin(time) +3 )/3)
+  .scrollX( ()=>(time/10) )
+  .scrollY( ()=>(time/10) * (-2))
+  .diff(
+    src(o1)
+    .scale(0.99)
+    .color(0.2,1,0.9)
+    //.rotate(o1)
+  )
+)
+//.kaleid( () => (Math.sin(time/20) +1.5 ) /1)
+.out(o1)
+
+render(o1)

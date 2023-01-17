@@ -1,0 +1,27 @@
+
+shape(3)
+.modulate(osc(0.1, 2))
+// .modulateKaleid(osc(10, 0.3))
+// .kaleid(0)
+.modulateRotate(osc(0.3, 20), 0.1)
+.color(1, 0.3, 0.7)
+.scrollX()
+.diff(o1)
+.modulateRotate(noise(1, 0.7), .4)
+.rotate()
+.scrollY(0.3)
+.scrollX(0.2)
+.scrollY(0.3)
+.scrollX(2)
+.modulateKaleid(noise(0.1, 0.1))
+.kaleid(3)
+.kaleid(1)
+.out(o0)
+
+
+shape(3)
+.modulate(osc(101, 0.1))
+.scrollX()
+.out(o1)
+
+render(o0)

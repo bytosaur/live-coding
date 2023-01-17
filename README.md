@@ -2,20 +2,21 @@
 my live coding material
 
 
-## Tools
+## Visuals
 
-#### tidalcycles
+#### hydra
+run either via atom package or in the [browser](hydra.ojack.xyz)
+
+## Sound
+
+### tidalcycles
 Checkout the [guide](https://tidalcycles.org/docs/getting-started/macos_install)
 
 Documentation:
 
-#### hydra
-either via atom package or at hydra.ojack.xyz
+## IDEs
 
-Documentation:
-
-#### Atom Packages
+### Atom Packages
 Atom -> Preferences -> Install:
 - hydra-atom
-
 - tidalcycles
