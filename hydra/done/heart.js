@@ -5,11 +5,15 @@
 // Hydra by Olivia Jack
 // https://github.com/hydra-synth/hydra-synth
 
+bpm=20
+
 // pixel heart
 shape(3)
 .add(shape(100).scrollY(0.21).scrollX(.125))
 .add(shape(100).scrollY(0.21).scrollX(-.125))
 .color(1,0,0).pixelate(26,16).scale(.8, 1.4)
+// .rotate( ()=>(time) )
+// .hue( ()=>(Math.sin(time/2)+1) )
 .out(o0)
 
 // trail
@@ -19,7 +23,9 @@ src(o0)
   .blend(o0, .1)
   .scrollX(.01)
   .scrollY(-.01)
-  .scale(.99)
+  .scale(0.99)
   .hue(.05)
 )
 .out(o1)
+
+render(o1)

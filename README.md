@@ -6,7 +6,12 @@ get more content at [TopLab's Awesome List](https://github.com/toplap/awesome-li
 ## Visuals
 
 #### hydra
-run either via atom package or in the [browser](hydra.ojack.xyz)
+JS framework for high-level shaders. Run either via atom package or in the [browser](hydra.ojack.xyz).
+- [getting started](https://hydra.ojack.xyz/docs/#/)
+- [book](https://hydra-book.glitch.me/#/)
+- [functions](https://hydra.ojack.xyz/api/)
+- [projects](https://hydra.ojack.xyz/garden/)
+- [github](https://github.com/hydra-synth/hydra)
 
 #### LiveCodeLab
 Browser environment for live coding simple 3D renders and sounds.
@@ -16,22 +21,39 @@ Perfect for beginners!
 
 
 ### KodeLife
-Real-time GPU shaders IDE
+__TODO__: check it out.
+
+Real-time GPU shaders IDE.
 - [website](https://hexler.net/kodelife)
 
+### ShaderToy
+__TODO__: check it out.
+
+- [website](https://www.shadertoy.com/)
+
+
 ### PraxisLive
-https://github.com/praxis-live/praxis-live
+__TODO__: check it out.
+
+- https://github.com/praxis-live/praxis-live
 
 ### Vuo
-https://vuo.org/
+__TODO__: check it out.
+
+- https://vuo.org/
 
 ### VVVV
-https://thegraybook.vvvv.org/
+__TODO__: check it out.
+
+- https://thegraybook.vvvv.org/
+- https://www.visualprogramming.net/
 
 
 ## Sound
 
 ### SonicPi
+__TODO__: check it out.
+
 - [website](https://sonic-pi.net/)
 
 ### tidalcycles

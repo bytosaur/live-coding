@@ -27,7 +27,7 @@ src(o0)
 .modulate(
   src(o2)
 )
-.kaleid(7)
+//.kaleid(2)
 .out(o1)
 
 shape(3)

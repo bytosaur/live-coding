@@ -1,0 +1,8 @@
+shape(4)
+.scale(0.2,9)
+.modulate(osc(20,.2))
+.repeat(4,4)
+.scrollY(() => -0.3*(time/5))
+.scrollX(() => -1*(time/5))
+.rotate(0.6)
+.out()

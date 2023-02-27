@@ -1,8 +1,6 @@
 
 shape(3)
 .modulate(osc(0.1, 2))
-// .modulateKaleid(osc(10, 0.3))
-// .kaleid(0)
 .modulateRotate(osc(0.3, 20), 0.1)
 .color(1, 0.3, 0.7)
 .scrollX()

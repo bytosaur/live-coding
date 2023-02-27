@@ -1,0 +1,5 @@
+shape([2,3,4,5], ()=>(Math.sin(time/10)+2)/4, 0)
+.rotate( ()=>(time/10) )
+.color(.7, 1, ()=>(Math.sin(time/1)+2)/3 )
+.modulate(src(o0).scrollX([0.0008, -0.001]))
+.out(o0)

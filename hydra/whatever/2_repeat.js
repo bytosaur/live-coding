@@ -23,5 +23,7 @@ shape(3)
 .out(o0)
 
 
+bpm=60
+speed=0.2
 
 render(o0)
