@@ -48,6 +48,9 @@ __TODO__: check it out.
 - https://thegraybook.vvvv.org/
 - https://www.visualprogramming.net/
 
+## Both
+
+### Gibber.cc
 
 ## Sound
 
@@ -59,7 +62,8 @@ __TODO__: check it out.
 ### tidalcycles
 Checkout the [guide](https://tidalcycles.org/docs/getting-started/macos_install)
 
-Documentation:
+IDE: REPL
+Strudel?
 
 
 ## Live Coding Environments
