@@ -14,3 +14,5 @@ src(o1)
 .scale(0.91, 1.1, 1.1, 0.7, 0.5)
 .rotate(0.001)
 .out(o1)
+
+render(o1)

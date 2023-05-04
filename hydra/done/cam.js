@@ -13,3 +13,5 @@ src(o1)
 .hue(0.001)
 .modulate(o1, -0.001)
 .out(o1)
+
+render(o1)

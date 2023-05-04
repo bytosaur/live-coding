@@ -1,3 +1,4 @@
+s0.initCam()
 
 src(s0)
 .luma(()=>(Math.sin(time)+2)/2)
