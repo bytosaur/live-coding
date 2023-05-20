@@ -7,9 +7,14 @@
 
 speed = 0.2
 
+a.show()
+
 bpm = 10
 
-shape(2).out()
+shape(2)
+.scale(()=>(a.fft[0]+1)).out()
+
+render()
 
 gradient()
 .rotate(Math.PI/2)

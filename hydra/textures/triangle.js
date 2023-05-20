@@ -6,10 +6,4 @@ shape(3, 0.2, 1e-6)
 .luma()
 .out()
 
-shape(99).out()
-
-a.show()
-
 render(o0)
-
-hush()

@@ -10,7 +10,7 @@ src(o1) //source itself (see output buffer)
 .layer
   (src(o0)
   .rotate(1,1)
-  .luma()
+  .luma(0.1)
   )  // layer the original texture (as a seed)
 .out(o1) // write to itself (see input buffer)
 

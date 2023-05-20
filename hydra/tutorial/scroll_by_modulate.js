@@ -1,9 +1,10 @@
 
 
-src(o0)
+src(o1)
 .modulateScrollY(gradient().pixelate(2,2).brightness(-0.5), -0.01)
-.layer(osc(10, 0.2, 1).mask(shape(3, 0.3, 0)).luma())
-.out(o0)
+.layer(src(o0).luma(.5))
+.out(o1)
 
+render(o1)
 
-shape(4, 0.1, 0.95).out()
+osc(10, 0.2, 1).mask(shape(3, 0.3, 0)).out()
