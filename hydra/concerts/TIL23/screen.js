@@ -3,9 +3,25 @@ bpm = 120 * 1.95
 
 s0.initScreen()
 
+hush()
+
 a.show()
 
-src(s0).out()
+                                        shape(99,0.1)
+                                        .color(0.7,1.3,0.9)
+                                        .repeat()
+                                        .layer(
+                                        src(s0)
+                                        .hue(0.1)
+                                        .color(0.99, 0.99,()=>(a.fft[0]< 0.5 ? 0.95 : 1))
+                                        .scale(1,-1)
+                                        .rotate(1,0.1)
+                                        .modulateScale(
+                                          gradient().color(0.2,1.5)
+                                          //.mask(voronoi())
+                                        )
+                                        .luma(0.1))
+                                        .out()
 
 render(o0)
 
@@ -57,7 +73,7 @@ osc()
   //.luma(()=>(a.fft[0]))
   // .modulateKaleid(
   //   osc(1,1,1).pixelate(2,2).rotate(Math.PI/2), 0.5)
-.out(o1)
+.out(o0)
 
 render(o1)
 

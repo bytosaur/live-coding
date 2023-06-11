@@ -46,4 +46,4 @@ src(o1)
 .out(o2)
 
 
-render(o1)
+render()
