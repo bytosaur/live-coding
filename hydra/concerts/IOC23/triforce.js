@@ -1,0 +1,71 @@
+// Type some code on a new line (such as "osc().out()"), and press CTRL+shift+enter
+//triforce
+triforce = () => shape(3, 0.4, 0)
+	.color(1, 1, 0)
+	.rotate(Math.PI)
+	.sub(shape(3, 0.2))
+	.scale(() => 2 * Math.exp(time % 8 / 8) - 1)
+
+//windwaker
+windwaker = () =>
+	gradient()
+	.g()
+	.invert()
+	.color(1, 0.6, 0.6)
+	.brightness(0.3)
+	.layer(shape(99, 0.2, 0)
+		.r()
+		.color(1, 0.6, 0.4))
+	.layer(solid(0.3, 0.3, 1)
+		.layer(
+			solid()
+			.layer(shape(4)
+				.scale(1, 0.3, 10)
+				.r())
+			.layer(shape(4)
+				.scale(1, 0.3, 10)
+				.rotate(Math.PI / 2)
+				.r())
+			.repeat(4, 4)
+			.scroll(0.02, 0)
+			.color(0.2, 0.2, 0.2)
+			.r()
+		)
+		.layer(solid()
+			.layer(shape(4)
+				.scale(1, 0.2, 10)
+				.r())
+			.layer(shape(4)
+				.scale(1, 0.2, 10)
+				.rotate(Math.PI / 2)
+				.r())
+			.repeat(4, 4)
+			.r()
+		)
+		.modulate(noise(5, 0.1), 0.1)
+		.scrollY(() => (Math.sin(time)) / 40)
+		.modulateScale(gradient()
+			.g()
+			.brightness(-1))
+		.scrollY(0.5)
+		//.add(gradient().g().brightness(-1),-0.9)
+		.mask(gradient()
+			.g()
+			.thresh(0.55, 0))
+	)
+
+//vapebeach
+vapebeach = () =>
+	osc(3, 0, 0.4)
+	.colorama([0.97, 1].ease()
+		.fast(0.15))
+	.rotate(Math.PI / 2)
+
+//mask the scenes to triforce
+windwaker()
+	.layer(vapebeach()
+		.mask(triforce()))
+	.out(o0)
+
+
+render(o0)
