@@ -1,7 +1,7 @@
 # live-coding
 my live coding material
 
-get more content at [TopLab's Awesome List](https://github.com/toplap/awesome-livecoding)
+get more content at [TopLap's Awesome List](https://github.com/toplap/awesome-livecoding)
 
 ## Visuals
 
