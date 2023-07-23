@@ -1,16 +1,16 @@
 // $$$ OBJECTS $$$ \\
 
 // triforce
-var triforce = () => shape(3, 0.4, 0)
+triforce = () => shape(3, 0.4, 0)
 	.color(1, 1, 0)
 	.rotate(Math.PI)
 	.sub(shape(3, 0.2))
 	// .scale(() => 2 * Math.exp(time % 8 / 8) - 1)
 
 // sun
-var sun = () => shape(99, 0.2, 0).color(1, 0.6, 0.4)
+sun = () => shape(99, 0.2, 0).color(1, 0.6, 0.4)
 
-var sun_and_moon = () =>  
+sun_and_moon = () =>
     solid()
     .layer(
       shape(99).scale(1,1)  // sun
@@ -28,7 +28,7 @@ var sun_and_moon = () =>
       )
 
 // palm
-var palm = () => new Array(10).fill().reduce((a,b)=> (
+palm = () => new Array(10).fill().reduce((a,b)=> (
         a.layer(shape(3).r().scale(0.2,1)
                 .rotate(Math.random(),1))), solid())
       .scale(1.5).scrollY(0.27).color(0,1,1)	// leafs
@@ -37,7 +37,7 @@ var palm = () => new Array(10).fill().reduce((a,b)=> (
 .luma()
 
 // birds
-var birds = () => new Array(4).fill().reduce(
+birds = () => new Array(4).fill().reduce(
   (a,b,i)=>(
         a.layer(
           solid()
@@ -53,7 +53,7 @@ var birds = () => new Array(4).fill().reduce(
 )
 
 // clouds
-var cloud0_o = (o) => new Array(20).fill().reduce(
+cloud0_o = (o) => new Array(20).fill().reduce(
 	(a,b,i) => (
       a.layer(
         shape(99, Math.random()/8 + 0.02, 0.000002)
@@ -68,7 +68,7 @@ var cloud0_o = (o) => new Array(20).fill().reduce(
   //.mult(osc(1,0.2,2)).colorama()
  .out(o)
 
-var cloud1_o = (o) => new Array(30).fill().reduce(
+cloud1_o = (o) => new Array(30).fill().reduce(
  	(a,b,i) => (
        a.layer(
          shape(99, Math.random()/15 + 0.02, 0.000001)
@@ -87,7 +87,7 @@ var cloud1_o = (o) => new Array(30).fill().reduce(
 
 // $$$ FLOORS $$$ \\
 
-var floor = () => gradient(1)
+floor = () => gradient(1)
   	.diff(shape(4,0.2).scale(8, .1).repeat(10,1)
   		.layer(shape(4,0.2).scale(1, 8).repeat(1,10).r())
     .scrollY(()=>(-time/2))
@@ -95,7 +95,7 @@ var floor = () => gradient(1)
   	.mask(gradient().rotate(Math.PI).g().thresh(0.5,0).invert())
 
 
-var water = () => solid(0.3,0.3,1)
+water = () => solid(0.3,0.3,1)
   .layer(solid()
     .layer(shape(4).scale(1,0.3,10).r())
     .layer(shape(4).scale(1,0.3,10).rotate(Math.PI/2).r())
@@ -115,7 +115,7 @@ var water = () => solid(0.3,0.3,1)
   .modulateScale(gradient().g().brightness(-1))
   .scrollY(0.5)
   //.add(gradient().g().brightness(-1),-0.9)
-  .mask(gradient().g().thresh(0.55,0))
+  .mask(gradient().g().thresh(0.5,0))
 
 water().out()
 
