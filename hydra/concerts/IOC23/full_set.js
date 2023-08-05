@@ -1,3 +1,39 @@
+// licensed with CC BY-NC-SA 4.0
+// https://creativecommons.org/licenses/by-nc-sa/4.0/
+// Hydra by Olivia Jack
+// https://github.com/hydra-synth/hydra-synth
+
+bpm=20
+//heart
+shape(3)
+  	.add(shape(99).scroll(-0.125,0.2))
+	.add(shape(99).scroll(0.125,0.2))
+	.color(() => a.fft[2]*2,0.5,.6)
+	.pixelate(50,50)
+	.scale(0.8,1.1,1.4)
+	.modulate(osc().rotate(Math.PI/2),0.01)
+  	.out(o0)
+render(o0)
+
+//heartrain
+src(o0)
+	.mask(noise(100,0.5).posterize(3,1).pixelate(512,512).modulate(noise(10),[-0.2,0.2].ease()).brightness([-1,1].ease()))
+	.out(o1)
+render(o1)
+
+
+// trail
+src(o2)
+  .scrollX(()=>(Math.cos(time/2)/100))
+  .scrollY(()=>(time%1 < 5 ? 0.01 : 0.2))
+  .scale(0.99)
+  .hue(.016)
+  // .color(0.9, 0.99, 0.99)
+  .layer(o1)
+  .out(o2)
+render(o2)
+
+
 // $$$ OBJECTS $$$ \\
 
 // triforce
