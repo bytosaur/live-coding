@@ -26,7 +26,7 @@ shape([1.5, 0.4, 1.7, 0.7, 99], 0.1)
 .luma(()=>(a.fft[0] < 0.3 ? 0.01 : 0.9))
 .out(o0)
 
-render(o2)
+render(o0)
 
 // layered
 src(o1)
