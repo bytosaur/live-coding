@@ -1,0 +1,16 @@
+noise()
+.mult(noise())
+.thresh(0.2,0.2)
+.colorama(()=>(Math.sin(time/2)/10)+2)
+.modulateScale(shape(99,0.3,0.5).mult(shape(99,0.3,0.5)),20)
+.mask(shape(99,0.7))
+.rotate(1,0.5)
+.luma(0.1,0)
+.out()
+
+src(o1)
+.hue(0.01)
+.layer(o0)
+.out(o1)
+
+render(o1)
