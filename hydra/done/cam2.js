@@ -9,3 +9,5 @@ src(s0)
   .rotate(() => (time / 1000000))
   .saturate(1.05)
   .out()
+
+  render(o0)
