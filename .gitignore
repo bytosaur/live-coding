@@ -1,1 +1,6 @@
 .DS_Store
+
+*.jpg
+*.png
+
+file_list.json
