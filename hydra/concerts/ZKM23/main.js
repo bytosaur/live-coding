@@ -36,8 +36,8 @@ p5.clear()
 p5.draw = () => {
     let xspeed = (cc[25]-0.5)*10
     let yspeed = (cc[26]-0.5)*10
-	  let counter_speed = cc[3]*1000  // OR -1 for random
-	  let background_removal = cc[2]*1000 // OR -1 for no background removal
+	let counter_speed = Math.floor(cc[3]*10)  // OR -1 for random
+	let background_removal = cc[2]*1000 // OR -1 for no background removal
     let sample_rate = cc[1]*10 // OR 10 for every 10th frame
     let random_pos = cc[60]==1?true:false
     let glitch_val = cc[4]*200
@@ -63,8 +63,8 @@ p5.draw = () => {
 			ypos = Math.floor(Math.random() * (height -image.height))
         }
         else {
-			xpos = (p5.frameCount * xspeed % (width -image.width) )
-			ypos = (p5.frameCount * yspeed % (height -image.height) )
+			xpos = (Math.abs(p5.frameCount * xspeed) % (width -image.width) )
+			ypos = (Math.abs(p5.frameCount * yspeed) % (height -image.height) )
         }
         if (glitch_it) {
       		glitch.loadImage(image); // load existing p5.js image
@@ -78,6 +78,8 @@ p5.draw = () => {
 }
 p5.hide()
 
+p5.show()
+
 
 // scroll by about 0.5 in a loop is awesome
 // cc luma
@@ -87,7 +89,6 @@ src(o0)
 .rotate([0.001, -0.001])
 .hue(0.001)
 //.modulate(o0,[-0.001, 0.0002].fast(0.3))
-//.scrollX(-0.0008)
 //.scrollX([0.501, 0.5, -0.501].offset(0.5))
 //.scrollY(0.499)
 //.contrast(1.01)
@@ -96,7 +97,7 @@ src(o0)
   src(s0)
   .luma(()=>(cc[9]),()=>(cc[10]))
   .modulate(src(o1),0.5)
-  .mask(src(o1).thresh())
+  .mask(src(o1).thresh(0.2))
   //.scrollY(()=>time/20)
   .invert(()=>(cc[11]))
 )
