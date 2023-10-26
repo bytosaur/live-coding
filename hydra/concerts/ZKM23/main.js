@@ -34,12 +34,14 @@ counter = 0
 // cc random or not
 p5.clear()
 p5.draw = () => {
-    let xspeed = 1
-    let yspeed = 1
-	let counter_speed = 1000  // OR -1 for random
-	let background_removal = 1000 // OR -1 for no background removal
-	let sample_rate = 10 // OR 10 for every 10th frame
-	
+    let xspeed = (cc[25]-0.5)*10
+    let yspeed = (cc[26]-0.5)*10
+	  let counter_speed = cc[3]*1000  // OR -1 for random
+	  let background_removal = cc[2]*1000 // OR -1 for no background removal
+    let sample_rate = cc[1]*10 // OR 10 for every 10th frame
+    let random_pos = cc[60]==1?true:false
+    let glitch_val = cc[4]*200
+    let glitch_it = cc[63]==1?true:false
     if (p5.frameCount % background_removal == 0 && background_removal > 0) {
        p5.background(0)
     }
@@ -56,7 +58,7 @@ p5.draw = () => {
 			let random_index = Math.floor(Math.random() * images.length)
 			image = images[random_index % images.length]
 		}
-        if (xspeed <= 0 || yspeed <= 0){
+        if (random_pos){
 			xpos = Math.floor(Math.random() * (width -image.width))
 			ypos = Math.floor(Math.random() * (height -image.height))
         }
@@ -64,11 +66,13 @@ p5.draw = () => {
 			xpos = (p5.frameCount * xspeed % (width -image.width) )
 			ypos = (p5.frameCount * yspeed % (height -image.height) )
         }
-		//glitch.loadImage(image); // load existing p5.js image
-		//glitch.randomBytes(10); // randomize 10 bytes
-		//glitch.replaceBytes(202, 1); // find + replace all
-		//glitch.buildImage(); // creates image from glitched data
-        image_out = glitch.image
+        if (glitch_it) {
+      		glitch.loadImage(image); // load existing p5.js image
+      		glitch.randomBytes(10); // randomize 10 bytes
+      		glitch.replaceBytes(glitch_val, glitch_val%17); // find + replace all
+      		glitch.buildImage(); // creates image from glitched data
+          image = glitch.image
+        }
 		p5.image(image, xpos, ypos)
 	}
 }
@@ -90,10 +94,11 @@ src(o0)
 //.saturate(1.01)
 .layer(
   src(s0)
-  .luma(0.1,0.0)
+  .luma(()=>(cc[9]),()=>(cc[10]))
   .modulate(src(o1),0.5)
+  .mask(src(o1).thresh())
   //.scrollY(()=>time/20)
-  .invert(0)
+  .invert(()=>(cc[11]))
 )
 .out(o0)
 
