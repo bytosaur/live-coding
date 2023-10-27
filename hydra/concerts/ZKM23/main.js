@@ -1,5 +1,6 @@
 await loadScript("https://cdn.jsdelivr.net/npm/p5.glitch@latest/p5.glitch.js")
 
+a.setSmooth(0.1)
 
 width = 1200
 height = 800
@@ -9,7 +10,6 @@ glitch = new Glitch(p5);
 // load a file containing base names for all the files in the directory
 server_url = "http://localhost:8080/"
 file_list = server_url + "file_list.json"
-// load the file_list
 loadFileList = async (file_list) => {
     const response = await fetch(file_list);
     const data = await response.json();
@@ -17,14 +17,12 @@ loadFileList = async (file_list) => {
         return data
     }
 }
-// load the file list
 data = loadFileList(file_list)
 images = []
 data.then(function(result) {
     for (const el of result) {
       p5.loadImage(server_url + "jpg/" + el, img => {
         images.push(img)
-        //console.log("loaded image: " + el)
     })
 }})
 counter = 0
@@ -36,7 +34,7 @@ p5.clear()
 p5.draw = () => {
     let xspeed = (cc[25]-0.5)*10
     let yspeed = (cc[26]-0.5)*10
-	let counter_speed = Math.floor(cc[3]*10)  // OR -1 for random
+	let counter_speed = Math.floor((cc[3])*100)  // OR -1 for random
 	let background_removal = cc[2]*1000 // OR -1 for no background removal
     let sample_rate = cc[1]*10 // OR 10 for every 10th frame
     let random_pos = cc[60]==1?true:false
@@ -80,27 +78,31 @@ p5.hide()
 
 p5.show()
 
+solid().out()
 
-// scroll by about 0.5 in a loop is awesome
 // cc luma
 // cc invert
 s0.init({src: p5.canvas})
 src(o0)
-.rotate([0.001, -0.001])
-.hue(0.001)
-//.modulate(o0,[-0.001, 0.0002].fast(0.3))
+//.rotate([0.001, -0.001])
+//.hue(0.001)
+//.modulate(o0,[-0.001,  0.0002].fast(0.3))
 //.scrollX([0.501, 0.5, -0.501].offset(0.5))
 //.scrollY(0.499)
-//.contrast(1.01)
+//.contrast(1.1)
 //.saturate(1.01)
 .layer(
-  src(s0)
-  .luma(()=>(cc[9]),()=>(cc[10]))
-  .modulate(src(o1),0.5)
-  .mask(src(o1).thresh(0.2))
+  //src(s0)
+  //.modulate(src(o1),0.5)
+  //.mask(src(o2).thresh(0.2))
   //.scrollY(()=>time/20)
-  .invert(()=>(cc[11]))
-)
+  src(o2)
+  //.mask(src(o1).thresh())
+  //.luma(()=>(cc[9]),()=>(cc[10]))
+  //.luma(()=>(a.fft[0]+0.2),()=>(cc[10]))
+  //.invert(()=>(cc[11]))
+  //.invert(()=>(a.fft[0]))
+).g()
 .out(o0)
 
 s1.initCam()
@@ -117,16 +119,36 @@ noise(1,0).pixelate(4,3)
 .out(o1)
 
 
-render(o0)
+render(o1)
 
 
-// src(o0)
-// .mask(o2)
-// .out(o1)
 
-// square().rotate(-Math.PI/3.2)
-// .mask(shape(4,0.3).scale(1,3,20).rotate(-Math.PI/2))
-// .repeat(3,1)
-// .out(o2)
 
-// render(o1)
+
+
+
+
+
+osc(27,-0.1)
+.rotate(0.2)
+.luma()
+.thresh(0.5,0)
+.invert(()=>(a.fft[0]>0.5?0:1))
+.out(o2)
+
+ 
+ 
+
+osc(27,-0.1)
+.rotate(0.17)
+.luma()
+//.modulate(o1)
+.thresh(0.5,0)
+.invert(()=>(a.fft[0]))
+.out(o2)
+
+
+osc(27,0).rotate(-Math.PI/1.1)
+.thresh(0.5,0.00)
+.scrollX(()=>(-time/4))
+ .out(o2)
