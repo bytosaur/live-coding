@@ -12,7 +12,7 @@ shape([1.5, 2.3, 3.2, 3.7])
 .color(0.7, 0.3, 1)
 .rotate(1, 0.05)
 .repeat(1, 0.2)
-//.luma(0.01)
+.luma(0.01,0)
 .out(o0)
 
 // white with trail
@@ -46,4 +46,4 @@ src(o1)
 .out(o2)
 
 
-render()
+render(o2)
