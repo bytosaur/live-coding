@@ -13,57 +13,25 @@ JS framework for high-level shaders. Run either via atom package or in the [brow
 - [projects](https://hydra.ojack.xyz/garden/)
 - [github](https://github.com/hydra-synth/hydra)
 
-#### LiveCodeLab
-Browser environment for live coding simple 3D renders and sounds.
-Perfect for beginners!
-- [website](https://livecodelab.net/index.html)
-- [github](https://github.com/davidedc/livecodelab)
 
+##### others
 
-### KodeLife
-__TODO__: check it out.
+- [KodeLife](https://hexler.net/kodelife): Real-time GPU shaders IDE (GLSL)
+- [shadertoy](https://www.shadertoy.com/): public shader library and online editor (GLSL)
+- [shaderpark](https://shaderpark.com/): interactive 2/3D shaders (high-level)
+- [livecodelab](https://livecodelab.net/index.html): Browser environment for live coding simple 3D renders and sounds (high-level, beginner friendly)
+- [praxislive](https://github.com/praxis-live/praxis-live)
+- [vuo](https://vuo.org/)
+- [vvvv](https://thegraybook.vvvv.org/)
 
-Real-time GPU shaders IDE.
-- [website](https://hexler.net/kodelife)
-
-### ShaderToy
-__TODO__: check it out.
-
-- [website](https://www.shadertoy.com/)
-
-
-### PraxisLive
-__TODO__: check it out.
-
-- https://github.com/praxis-live/praxis-live
-
-### Vuo
-__TODO__: check it out.
-
-- https://vuo.org/
-
-### VVVV
-__TODO__: check it out.
-
-- https://thegraybook.vvvv.org/
-- https://www.visualprogramming.net/
-
-## Both
-
-### Gibber.cc
 
 ## Sound
+- [sonic-pi](https://sonic-pi.net/)
+- [tidalcycles ](https://tidalcycles.org) / [strudel](https://strudel.cc)
 
-### SonicPi
-__TODO__: check it out.
 
-- [website](https://sonic-pi.net/)
-
-### tidalcycles
-Checkout the [guide](https://tidalcycles.org/docs/getting-started/macos_install)
-
-IDE: REPL
-Strudel?
+## Both
+- [gibber](https://Gibber.cc)
 
 
 ## Live Coding Environments
@@ -83,6 +51,5 @@ Supports:
 
 
 ### Atom Packages
-Atom -> Preferences -> Install:
 - hydra-atom
 - tidalcycles
