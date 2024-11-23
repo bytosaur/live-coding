@@ -1,16 +1,16 @@
+// licensed with CC BY-NC-SA 4.0 https://creativecommons.org/licenses/by-nc-sa/4.0/
+// paul henri
+// corrupted delay line
 
 s0.initCam()
-s1.initScreen()
 
+setResolution(4000,2000)
+
+bpm = 120
 
 x=.25
 x2=.125
 hleft=x+x2
-
-bpm = 120
-
-setResolution(4000,4000)
-
 s=30
 s4=s/4
 src(o0)
